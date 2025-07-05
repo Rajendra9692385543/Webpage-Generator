@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Course Webpage Generator</title>
+</head>
+<body>
+  <h2>Enter Course Content</h2>
+  <form action="/generate" method="post">
+    <label>Course Title:</label><br>
+    <input type="text" name="title" required><br><br>
+
+    <label>Course Code (Credit):</label><br>
+    <input type="text" name="code_credit" required><br><br>
+
+    <label>Course Objectives (paste paragraph or list):</label><br>
+    <textarea name="objectives" rows="6" required></textarea><br><br>
+
+    <label>Course Outcomes (paste paragraph or list):</label><br>
+    <textarea name="outcomes" rows="6" required></textarea><br><br>
+
+    <label>Course Syllabus (Paste complete module-wise content):</label><br>
+    <textarea name="syllabus" rows="30" required></textarea><br><br>
+
+    <button type="submit">Generate Webpage</button>
+  </form>
+</body>
+</html>
