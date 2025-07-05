@@ -1,27 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Course Webpage Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #eef2f3, #8e9eab);
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+    .form-container {
+      background-color: #ffffff;
+      padding: 40px 50px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 900px;
+    }
+    h2 {
+      text-align: center;
+      color: #003366;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    label {
+      font-weight: 500;
+      margin-top: 20px;
+      color: #333;
+    }
+    textarea, input[type="text"] {
+      margin-top: 8px;
+      width: 100%;
+      padding: 10px 15px;
+      border-radius: 6px;
+      border: 1px solid #ced4da;
+      transition: border 0.3s;
+    }
+    textarea:focus, input:focus {
+      border-color: #003366;
+      outline: none;
+    }
+    button {
+      background-color: #003366;
+      color: #fff;
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 30px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0059b3;
+    }
+    .footer-note {
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
-  <h2>Enter Course Content</h2>
-  <form action="/generate" method="post">
-    <label>Course Title:</label><br>
-    <input type="text" name="title" required><br><br>
 
-    <label>Course Code (Credit):</label><br>
-    <input type="text" name="code_credit" required><br><br>
+  <div class="form-container">
+    <h2>📘 Course Webpage Generator</h2>
+    <form action="/generate" method="post">
 
-    <label>Course Objectives (paste paragraph or list):</label><br>
-    <textarea name="objectives" rows="6" required></textarea><br><br>
+      <div class="mb-3">
+        <label for="title">Course Title:</label>
+        <input type="text" id="title" name="title" placeholder="e.g. Data Structures and Algorithms" required>
+      </div>
 
-    <label>Course Outcomes (paste paragraph or list):</label><br>
-    <textarea name="outcomes" rows="6" required></textarea><br><br>
+      <div class="mb-3">
+        <label for="code_credit">Course Code (Credit):</label>
+        <input type="text" id="code_credit" name="code_credit" placeholder="e.g. CUCS1002 (2+4+0)" required>
+      </div>
 
-    <label>Course Syllabus (Paste complete module-wise content):</label><br>
-    <textarea name="syllabus" rows="30" required></textarea><br><br>
+      <div class="mb-3">
+        <label for="objectives">Course Objectives (Paste paragraph or list):</label>
+        <textarea id="objectives" name="objectives" rows="5" placeholder="Enter objectives here..." required></textarea>
+      </div>
 
-    <button type="submit">Generate Webpage</button>
-  </form>
+      <div class="mb-3">
+        <label for="outcomes">Course Outcomes (Paste paragraph or list):</label>
+        <textarea id="outcomes" name="outcomes" rows="5" placeholder="Enter learning outcomes here..." required></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="syllabus">Course Syllabus (Paste full module-wise content):</label>
+        <textarea id="syllabus" name="syllabus" rows="15" placeholder="Enter syllabus here..." required></textarea>
+      </div>
+
+      <div class="text-center">
+        <button type="submit">🚀 Generate Webpage</button>
+      </div>
+    </form>
+
+    <div class="footer-note mt-4">
+      Designed for academic course documentation | Powered by Flask
+    </div>
+  </div>
+
 </body>
 </html>
